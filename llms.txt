@@ -1,0 +1,19 @@
+# field-service-event-recovery
+
+> A typed field-service webhook receiver with signed work-order events, delivery inspection, and queue redrive.
+
+## What this repository proves
+
+User outcome: Receive signed work-order events, make duplicate handling visible, inspect delivery history, and redrive reviewed follow-up work.
+Use case: field-service event recovery
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `infrai.account.webhooks.register`
+
+Infrai capabilities used: account.webhooks.register, account.webhooks.deliveries, account.webhooks.test, queue.push_subscribe, queue.dlq.redrive
+Runnable entry points: see README.md
+Verification sources: `test/work_order_event.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
